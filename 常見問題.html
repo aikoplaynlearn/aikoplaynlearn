@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>愛子小玩藝｜常見問題</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', sans-serif;
+            background: linear-gradient(135deg, #ffeef5 0%, #ffe0ec 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ffb3d1 0%, #ff99cc 100%);
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(255, 153, 204, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '🎨';
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .header::after {
+            content: '🎪';
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #fff;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .search-section {
+            background: linear-gradient(145deg, #ffffff, #f8f2ff);
+            border-radius: 25px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 
+                0 15px 35px rgba(153, 102, 204, 0.1),
+                0 5px 15px rgba(255, 153, 204, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .search-container {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: 2px solid #ffb3d1;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            box-shadow: 
+                inset 2px 2px 5px rgba(153, 102, 204, 0.1),
+                0 2px 10px rgba(255, 153, 204, 0.1);
+            background: linear-gradient(145deg, #ffffff, #fefaff);
+        }
+
+        .search-input:focus {
+            border-color: #9966cc;
+            box-shadow: 
+                0 0 20px rgba(153, 102, 204, 0.3),
+                inset 2px 2px 5px rgba(153, 102, 204, 0.1);
+        }
+
+        .clear-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(145deg, #cc66ff, #9966cc, #ff99cc);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            display: none;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 4px 15px rgba(153, 102, 204, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .clear-btn:hover {
+            background: linear-gradient(145deg, #b852ff, #8052cc, #ff80b3);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 
+                0 6px 20px rgba(153, 102, 204, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .quick-link {
+            background: linear-gradient(145deg, #cc66ff, #9966cc, #ff99cc);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 6px 20px rgba(153, 102, 204, 0.25),
+                0 2px 8px rgba(255, 153, 204, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .quick-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 10px 30px rgba(153, 102, 204, 0.35),
+                0 4px 15px rgba(255, 153, 204, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            background: linear-gradient(145deg, #b852ff, #8052cc, #ff80b3);
+        }
+
+        .category {
+            background: linear-gradient(145deg, #ffffff, #f8f2ff);
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            box-shadow: 
+                0 15px 35px rgba(153, 102, 204, 0.12),
+                0 5px 15px rgba(255, 153, 204, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            overflow: hidden;
+        }
+
+        .category-header {
+            background: linear-gradient(145deg, #cc66ff, #9966cc, #ff99cc);
+            padding: 1rem 1.5rem;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                0 2px 10px rgba(153, 102, 204, 0.2);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ffe0ec;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            font-weight: bold;
+            color: #333;
+            background: linear-gradient(145deg, #ffffff, #fefaff);
+            border: 2px solid rgba(255, 179, 209, 0.3);
+            width: 100%;
+            text-align: left;
+            font-size: 1rem;
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 
+                inset 2px 2px 5px rgba(255, 255, 255, 0.8),
+                inset -2px -2px 5px rgba(153, 102, 204, 0.05);
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(145deg, #f8f2ff, #fff5ff);
+            border-color: rgba(153, 102, 204, 0.5);
+            color: #000;
+            box-shadow: 
+                0 5px 15px rgba(153, 102, 204, 0.15),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.9),
+                inset -2px -2px 5px rgba(153, 102, 204, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #cc66ff;
+            margin-left: auto;
+            transition: transform 0.3s ease;
+            text-shadow: 0 1px 2px rgba(153, 102, 204, 0.2);
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            background: #ffeef5;
+            color: #666;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 1rem 1.5rem;
+            max-height: 200px;
+        }
+
+        .contact-section {
+            background: linear-gradient(145deg, #ffffff, #f8f2ff);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 
+                0 15px 35px rgba(153, 102, 204, 0.12),
+                0 5px 15px rgba(255, 153, 204, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            margin-top: 2rem;
+        }
+
+        .contact-title {
+            font-size: 1.5rem;
+            color: #d14580;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .contact-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-link {
+            display: inline-block;
+            padding: 12px 20px;
+            background: linear-gradient(145deg, #cc66ff, #9966cc, #ff99cc);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 6px 20px rgba(153, 102, 204, 0.25),
+                0 2px 8px rgba(255, 153, 204, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-link:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 12px 35px rgba(153, 102, 204, 0.35),
+                0 4px 15px rgba(255, 153, 204, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(145deg, #b852ff, #8052cc, #ff80b3);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .quick-links {
+                justify-content: center;
+            }
+            
+            .contact-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">愛子小玩藝</div>
+        <div class="subtitle">常見問題</div>
+    </div>
+
+    <div class="container">
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="搜尋你想了解的問題..." id="searchInput">
+                <button class="clear-btn" id="clearBtn">×</button>
+            </div>
+            <div class="quick-links">
+                <button class="quick-link" onclick="scrollToCategory('course')">課程相關</button>
+                <button class="quick-link" onclick="scrollToCategory('schedule')">上課與請假</button>
+                <button class="quick-link" onclick="scrollToCategory('payment')">收費與套票</button>
+                <button class="quick-link" onclick="scrollToCategory('facility')">教室與環境</button>
+                <button class="quick-link" onclick="scrollToCategory('others')">其他項目</button>
+            </div>
+        </div>
+
+        <div class="category" id="course">
+            <div class="category-header">
+                💡 課程相關
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：課程適合幾歲的孩子參加？
+                </button>
+                <div class="faq-answer">
+                    A：各課程有不同上課年齡建議，主要為 1.5～12 歲兒童。我們設有親子班、幼幼班、小童班與大童班，歡迎參考各課程說明頁或聯繫我們查詢適合課程。
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：孩子需要有基礎才能報名嗎？
+                </button>
+                <div class="faq-answer">
+                    A：不需要。課程皆可從零開始，老師會依孩子狀況調整指導方式，讓每個孩子都能自在參與、逐步成長。
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：是否可以試上一堂看看？
+                </button>
+                <div class="faq-answer">
+                    A：可以，每項課程每人可體驗一次。我們提供單堂體驗報名，同時也推出多種優惠體驗活動，歡迎把握機會參與！
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：上課時家長需要陪同嗎？
+                </button>
+                <div class="faq-answer">
+                    A：依課程性質而定。親子課程需要家長陪同參與；3歲以上的課程多採獨立上課方式，我們鼓勵家長在教室外等候，以培養孩子的獨立適應能力。如有特殊需求，歡迎與我們討論相關安排。
+                </div>
+            </div>
+        </div>
+
+        <div class="category" id="schedule">
+            <div class="category-header">
+                📅 上課與請假
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：課程是固定時間嗎？可以彈性選課嗎？
+                </button>
+                <div class="faq-answer">
+                    A：為達到最佳學習效果，我們建議孩子維持每週固定上課的節奏。當然，您也可以根據需要彈性安排每次的課程時段。請假次數不受限制，只需在合約期限內將所有課程使用完畢即可。
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：請假規定？可以補課嗎？
+                </button>
+                <div class="faq-answer">
+                    A：請假需於開課前兩小時告知，未依時告知者將依規定扣除一堂課程。請假次數無限制，我們將為您保留課程堂數，讓您在有效期限內自由安排補課時間。請假請務必在規定時間內透過官方Line通知我們。
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：需要提前多久預約課程？
+                </button>
+                <div class="faq-answer">
+                    A：建議最晚於上課前一日透過LINE完成預約（名額有限，額滿為止）。如需臨時參加，可私訊洽詢是否仍有空位。預約表單開放三天後至一個月內的課程預約。
+                </div>
+            </div>
+        </div>
+
+        <div class="category" id="payment">
+            <div class="category-header">
+                🧾 收費與套票
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：請問收費方式與套票怎麼使用？
+                </button>
+                <div class="faq-answer">
+                    A：我們提供 8、12、24 堂套票，費用愈多堂愈優惠。套票限單一課程項目使用，並於指定期限內使用完畢。
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：可以多位孩子共用一張套票嗎？
+                </button>
+                <div class="faq-answer">
+                    A：每張套票限一人使用，不可多人共用。二人同行另有優惠方案，詳見當期活動資訊。
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：若臨時無法繼續上課，可以退費嗎？
+                </button>
+                <div class="faq-answer">
+                    A：因套票屬優惠組合，購買後恕不接受退費，若遇特殊情況請聯繫我們個別處理。
+                </div>
+            </div>
+        </div>
+
+        <div class="category" id="facility">
+            <div class="category-header">
+                🏫 教室與環境
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：你們的教室在哪裡？有停車位嗎？
+                </button>
+                <div class="faq-answer">
+                    A：我們位於台中市北屯區南興路189號，鄰近松竹車站，路邊設有收費停車格，詳細停車資訊可參考LINE公告。
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：課堂如何確保孩子安全？
+                </button>
+                <div class="faq-answer">
+                    A：我們注重安全設施與器材維護，課程由專業師資授課，小班制運作，親子課程也會引導家長適當參與與保護。
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：有洗手間、哺乳室或親子設施嗎？
+                </button>
+                <div class="faq-answer">
+                    A：有，教室設有兒童洗手間與簡易哺乳空間，並備有飲水機，歡迎家長陪同使用。
+                </div>
+            </div>
+        </div>
+
+        <div class="category" id="others">
+            <div class="category-header">
+                🎪 其他項目
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：會舉辦季節活動或工作坊嗎？
+                </button>
+                <div class="faq-answer">
+                    A：會！我們會不定期舉辦節慶主題課、親子手作、戶外五感藝術等特別活動，歡迎追蹤我們的FB粉專或IG接收第一手消息。
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Q：可接受團體包班或外派課程嗎？
+                </button>
+                <div class="faq-answer">
+                    A：目前以教室內課程為主，如需包班合作、幼兒園課程規劃等，歡迎私訊洽談。
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-title">💌 聯絡我們</div>
+            <div class="contact-links">
+                <a href="https://maps.app.goo.gl/FnKMKcGZbsL1qLm39" target="_blank" class="contact-link">
+                    📍 Google地圖
+                </a>
+                <a href="https://lin.ee/NPbcR3M" target="_blank" class="contact-link">
+                    💬 官方LINE
+                </a>
+                <a href="https://www.facebook.com/Aiko.playnlearn" target="_blank" class="contact-link">
+                    📘 FB粉專
+                </a>
+                <a href="https://www.instagram.com/aiko_playnlearn/" target="_blank" class="contact-link">
+                    📷 Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 搜尋功能
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearBtn');
+        const categories = document.querySelectorAll('.category');
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            
+            if (searchTerm) {
+                clearBtn.style.display = 'block';
+                
+                categories.forEach(category => {
+                    let hasVisibleItems = false;
+                    const items = category.querySelectorAll('.faq-item');
+                    
+                    items.forEach(item => {
+                        const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                        const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                        
+                        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                            item.style.display = 'block';
+                            hasVisibleItems = true;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    if (hasVisibleItems) {
+                        category.style.display = 'block';
+                    } else {
+                        category.style.display = 'none';
+                    }
+                });
+            } else {
+                clearBtn.style.display = 'none';
+                categories.forEach(category => {
+                    category.style.display = 'block';
+                    const items = category.querySelectorAll('.faq-item');
+                    items.forEach(item => {
+                        item.style.display = 'block';
+                    });
+                });
+            }
+        });
+
+        clearBtn.addEventListener('click', function() {
+            searchInput.value = '';
+            clearBtn.style.display = 'none';
+            categories.forEach(category => {
+                category.style.display = 'block';
+                const items = category.querySelectorAll('.faq-item');
+                items.forEach(item => {
+                    item.style.display = 'block';
+                });
+            });
+            searchInput.focus();
+        });
+
+        // FAQ 收合功能
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const isActive = button.classList.contains('active');
+            
+            if (isActive) {
+                button.classList.remove('active');
+                answer.classList.remove('active');
+            } else {
+                button.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
+
+        // 快速連結功能
+        function scrollToCategory(categoryId) {
+            const category = document.getElementById(categoryId);
+            if (category) {
+                category.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // 回到頂部功能
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 30px rgba(255, 153, 204, 0.4)';
+            } else {
+                header.style.boxShadow = '0 4px 20px rgba(255, 153, 204, 0.3)';
+            }
+        });
+    </script>
+</body>
+</html>
