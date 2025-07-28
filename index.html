@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
-            background: linear-gradient(135deg, #fef7ed 0%, #fef3e2 50%, #fdf2f8 100%);
+            background: linear-gradient(135deg, #fef7ed 0%, #fef3e2 30%, #fff7e6 60%, #fdf2f8 100%);
             min-height: 100vh;
             line-height: 1.6;
         }
@@ -73,11 +73,12 @@
         /* Search and Filter */
         .controls {
             margin-bottom: 30px;
-            background: white;
+            background: linear-gradient(135deg, #ffffff 0%, #fef7ed 100%);
             padding: 25px;
             border-radius: 20px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             text-align: center;
+            border: 2px solid rgba(255, 168, 204, 0.2);
         }
 
         .search-box {
@@ -93,7 +94,7 @@
             border-radius: 50px;
             outline: none;
             transition: all 0.3s ease;
-            background: #fef7ed;
+            background: linear-gradient(45deg, #fef7ed 0%, #fff7e6 100%);
         }
 
         .search-box input:focus {
@@ -176,10 +177,11 @@
         /* FAQ Category Sections */
         .category-section {
             margin-bottom: 30px;
-            background: white;
+            background: linear-gradient(135deg, #ffffff 0%, #fef7ed 100%);
             border-radius: 20px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             overflow: hidden;
+            border: 2px solid rgba(255, 168, 204, 0.15);
         }
 
         .category-header {
@@ -211,7 +213,7 @@
         }
 
         .faq-item {
-            background: white;
+            background: linear-gradient(90deg, #ffffff 0%, #fef7ed 100%);
             margin-bottom: 0;
             border-radius: 0;
             overflow: hidden;
@@ -229,7 +231,7 @@
         .faq-item:hover {
             transform: none;
             box-shadow: none;
-            background: #fef7ed;
+            background: linear-gradient(90deg, #fff7e6 0%, #fef3e2 100%);
         }
 
         .faq-question {
@@ -238,13 +240,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(90deg, #fef7ed, #fff);
+            background: linear-gradient(90deg, #ffffff 0%, #fef7ed 100%);
             transition: all 0.3s ease;
             position: relative;
         }
 
         .faq-question:hover {
-            background: linear-gradient(90deg, #fef3e2, #fef7ed);
+            background: linear-gradient(90deg, #fff7e6 0%, #fef3e2 100%);
         }
 
         .faq-question h3 {
@@ -256,13 +258,29 @@
         }
 
         .faq-icon {
-            color: #ff6b9d;
             font-size: 20px;
             transition: transform 0.3s ease;
         }
 
         .faq-item.active .faq-icon {
             transform: rotate(180deg);
+        }
+
+        /* Category-specific icon colors */
+        .category-section[data-category="課程相關"] .faq-icon {
+            color: #ff6b9d;
+        }
+        .category-section[data-category="上課與請假"] .faq-icon {
+            color: #34d399;
+        }
+        .category-section[data-category="收費與套票"] .faq-icon {
+            color: #f59e0b;
+        }
+        .category-section[data-category="教室與環境"] .faq-icon {
+            color: #a855f7;
+        }
+        .category-section[data-category="其他項目"] .faq-icon {
+            color: #3b82f6;
         }
 
         .faq-expand-icon {
@@ -281,7 +299,7 @@
             max-height: 0;
             overflow: hidden;
             transition: all 0.3s ease;
-            background: linear-gradient(90deg, #fef7ed, #fff);
+            background: linear-gradient(90deg, #fff7e6 0%, #fef3e2 100%);
         }
 
         .faq-item.active .faq-answer {
@@ -352,13 +370,14 @@
             justify-content: center;
             gap: 12px;
             padding: 15px 20px;
-            background: white;
+            background: linear-gradient(135deg, #ffffff 0%, #fef7ed 100%);
             color: #4c1d95;
             text-decoration: none;
             border-radius: 15px;
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
         }
 
         .contact-btn i {
@@ -368,13 +387,37 @@
         .contact-btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            background: linear-gradient(45deg, #fef7ed, #fff);
+            background: linear-gradient(45deg, #fff7e6, #fef3e2);
         }
 
-        .contact-btn.line { border-left: 5px solid #00c300; }
-        .contact-btn.facebook { border-left: 5px solid #1877f2; }
-        .contact-btn.instagram { border-left: 5px solid #e4405f; }
-        .contact-btn.map { border-left: 5px solid #ea4335; }
+        .contact-btn.line { 
+            border-color: #00c300;
+        }
+        .contact-btn.line:hover {
+            border-color: #00c300;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        }
+        .contact-btn.facebook { 
+            border-color: #1877f2;
+        }
+        .contact-btn.facebook:hover {
+            border-color: #1877f2;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        }
+        .contact-btn.instagram { 
+            border-color: #e4405f;
+        }
+        .contact-btn.instagram:hover {
+            border-color: #e4405f;
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+        }
+        .contact-btn.map { 
+            border-color: #8b5cf6;
+        }
+        .contact-btn.map:hover {
+            border-color: #8b5cf6;
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+        }
 
         .map-container {
             border-radius: 15px;
@@ -407,6 +450,14 @@
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2em;
+            }
+            
+            .faq-question h3 {
+                font-size: 1.1em;
+            }
+            
+            .faq-answer p {
+                font-size: 1em;
             }
             
             .category-filters {
@@ -465,19 +516,19 @@
             <div class="contact-buttons">
                 <a href="https://lin.ee/M9wYvrf" class="contact-btn line" target="_blank">
                     <i class="fab fa-line"></i>
-                    官方LINE
+                    官方 LINE
                 </a>
                 <a href="https://www.facebook.com/Aiko.playnlearn" class="contact-btn facebook" target="_blank">
                     <i class="fab fa-facebook-f"></i>
-                    FB粉專
+                    FB 粉專
                 </a>
                 <a href="https://www.instagram.com/aiko_playnlearn/" class="contact-btn instagram" target="_blank">
                     <i class="fab fa-instagram"></i>
-                    追蹤IG
+                    追蹤 IG
                 </a>
                 <a href="https://maps.app.goo.gl/oyVFkr9cZFtVUFwZ7" class="contact-btn map" target="_blank">
                     <i class="fas fa-map-marker-alt"></i>
-                    Google地圖
+                    Google 地圖
                 </a>
             </div>
         </div>
@@ -607,6 +658,35 @@
             "其他項目": "🎪"
         };
 
+        // Category colors
+        const categoryColors = {
+            "課程相關": {
+                header: "linear-gradient(45deg, #ffc1cc, #ffb3ba, #ffa8cc)",
+                background: "linear-gradient(135deg, #fff5f7 0%, #ffe4e6 100%)",
+                border: "rgba(255, 193, 204, 0.3)"
+            },
+            "上課與請假": {
+                header: "linear-gradient(45deg, #a8e6cf, #7fcdcd, #88d8c0)",
+                background: "linear-gradient(135deg, #f0fdfa 0%, #e6fffa 100%)",
+                border: "rgba(168, 230, 207, 0.3)"
+            },
+            "收費與套票": {
+                header: "linear-gradient(45deg, #ffd3a5, #ffb347, #ffc48c)",
+                background: "linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)",
+                border: "rgba(255, 211, 165, 0.3)"
+            },
+            "教室與環境": {
+                header: "linear-gradient(45deg, #c8a8e9, #b19cd9, #dda0dd)",
+                background: "linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%)",
+                border: "rgba(200, 168, 233, 0.3)"
+            },
+            "其他項目": {
+                header: "linear-gradient(45deg, #87ceeb, #98d8e8, #b0e0e6)",
+                background: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)",
+                border: "rgba(135, 206, 235, 0.3)"
+            }
+        };
+
         let currentCategory = 'all';
         let currentSearch = '';
 
@@ -650,9 +730,10 @@
             // Render grouped FAQ
             let html = '';
             Object.keys(groupedData).forEach(category => {
+                const colors = categoryColors[category];
                 html += `
-                    <div class="category-section fade-in">
-                        <div class="category-header">
+                    <div class="category-section fade-in" data-category="${category}" style="background: ${colors.background}; border-color: ${colors.border};">
+                        <div class="category-header" style="background: ${colors.header};">
                             ${categoryIcons[category]} ${category}
                         </div>
                         ${groupedData[category].map(item => `
