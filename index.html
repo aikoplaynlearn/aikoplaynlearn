@@ -174,6 +174,72 @@
             color: white;
         }
 
+        /* 全部問題按鈕保持原色 */
+        .category-btn[data-category="all"] {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .category-btn[data-category="all"]:hover,
+        .category-btn[data-category="all"].active {
+            background: linear-gradient(135deg, #5a67d8 0%, #667eea 100%);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* 課程相關 - 粉色系 */
+        .category-btn[data-category="課程相關"] {
+            background: linear-gradient(45deg, #ffc1cc, #ffb3ba, #ffa8cc);
+        }
+
+        .category-btn[data-category="課程相關"]:hover,
+        .category-btn[data-category="課程相關"].active {
+            background: linear-gradient(45deg, #ff9eb3, #ff8ba0, #ff7a9a);
+            box-shadow: 0 8px 20px rgba(255, 193, 204, 0.4);
+        }
+
+        /* 上課與請假 - 綠色系 */
+        .category-btn[data-category="上課與請假"] {
+            background: linear-gradient(45deg, #a8e6cf, #7fcdcd, #88d8c0);
+        }
+
+        .category-btn[data-category="上課與請假"]:hover,
+        .category-btn[data-category="上課與請假"].active {
+            background: linear-gradient(45deg, #7dd3a0, #5fb3b3, #66c29f);
+            box-shadow: 0 8px 20px rgba(168, 230, 207, 0.4);
+        }
+
+        /* 收費與套票 - 橙色系 */
+        .category-btn[data-category="收費與套票"] {
+            background: linear-gradient(45deg, #ffd3a5, #ffb347, #ffc48c);
+        }
+
+        .category-btn[data-category="收費與套票"]:hover,
+        .category-btn[data-category="收費與套票"].active {
+            background: linear-gradient(45deg, #ffbf80, #ff9500, #ffab66);
+            box-shadow: 0 8px 20px rgba(255, 211, 165, 0.4);
+        }
+
+        /* 教室與環境 - 紫色系 */
+        .category-btn[data-category="教室與環境"] {
+            background: linear-gradient(45deg, #c8a8e9, #b19cd9, #dda0dd);
+        }
+
+        .category-btn[data-category="教室與環境"]:hover,
+        .category-btn[data-category="教室與環境"].active {
+            background: linear-gradient(45deg, #b088d6, #9b7bc9, #d580d5);
+            box-shadow: 0 8px 20px rgba(200, 168, 233, 0.4);
+        }
+
+        /* 其他項目 - 藍色系 */
+        .category-btn[data-category="其他項目"] {
+            background: linear-gradient(45deg, #87ceeb, #98d8e8, #b0e0e6);
+        }
+
+        .category-btn[data-category="其他項目"]:hover,
+        .category-btn[data-category="其他項目"].active {
+            background: linear-gradient(45deg, #5fb3d4, #70c5d4, #87ceeb);
+            box-shadow: 0 8px 20px rgba(135, 206, 235, 0.4);
+        }
+
         /* FAQ Category Sections */
         .category-section {
             margin-bottom: 30px;
